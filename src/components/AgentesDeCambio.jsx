@@ -22,7 +22,7 @@ const AgentesDeCambio = () => {
   };
 
   const sensitivity =
-    window.innerWidth > 1000 ? { x: 10, y: 10 } : { x: 150, y: 300 };
+    window.innerWidth > 1000 ? { x: 10, y: 10 } : { x: 100, y: 300 };
 
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
@@ -238,10 +238,11 @@ const Container = styled.div`
     width: 100%;
     height: 100vh;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     color: white;
+    gap: 2rem;
   }
 
   .swiper-pagination {
@@ -349,15 +350,17 @@ const Titulo = styled.div`
   width: 100%;
   height: 3rem;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
-  justify-content: space-around;
 
   h2 {
-    font-size: 1.5rem;
+    font-size: 10vw;
+    margin: 0; /* Eliminamos el margen predeterminado del h2 */
   }
 
   p {
-    font-size: 12px;
+    font-size: 4vw;
     opacity: 0.9;
+    margin: 0; /* Eliminamos el margen predeterminado del p */
   }
 `;
