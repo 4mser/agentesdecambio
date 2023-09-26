@@ -44,14 +44,30 @@ Error generating stack: `+l.message+`
   width: 100%;
   height: 100vh;
   background-image: radial-gradient(
-    circle at 85.36% -11.24%,
-    #f6fca9 0,
-    #e1f5a0 16.67%,
-    #c6e992 33.33%,
-    #a4d880 50%,
-    #80c770 66.67%,
-    #5ebb69 83.33%,
-    #3ab368 100%
+    circle at 0% 0%,
+    #fff8e8 0,
+    #fff9e6 4.55%,
+    #fff8e3 9.09%,
+    #fff8df 13.64%,
+    #fff6db 18.18%,
+    #fbf4d6 22.73%,
+    #f3f2d0 27.27%,
+    #e9efcb 31.82%,
+    #ddecc5 36.36%,
+    #cfe8bf 40.91%,
+    #bfe3ba 45.45%,
+    #addeb6 50%,
+    #99d9b3 54.55%,
+    #85d4b3 59.09%,
+    #70d0b5 63.64%,
+    #5accb9 68.18%,
+    #41c8bf 72.73%,
+    #21c5c5 77.27%,
+    #00c1cd 81.82%,
+    #00bfd4 86.36%,
+    #00bcdc 90.91%,
+    #00bae3 95.45%,
+    #00b7ea 100%
   );
   position: fixed;
   overflow: hidden;
@@ -134,7 +150,7 @@ Error generating stack: `+l.message+`
   .botonNavegador .nav2 .btn1 {
     width: 50px;
     height: 3px;
-    background: white;
+    background: #479547;
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
   }
@@ -142,7 +158,7 @@ Error generating stack: `+l.message+`
   .botonNavegador .nav2 .btn2 {
     width: 50px;
     height: 3px;
-    background: white;
+    background: #479547;
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
   }
@@ -184,7 +200,7 @@ Error generating stack: `+l.message+`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  margin-left: 2rem;
+  padding: 2rem;
 
   h2 {
     font-size: 10vw;
