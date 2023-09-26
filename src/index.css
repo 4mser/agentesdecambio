@@ -5,3 +5,8 @@
   font-family: Montserrat;
   user-select: none;
 }
+
+:root {
+  --green: rgb(128, 175, 105);
+  --color2:rgb(110, 110, 110);
+}
