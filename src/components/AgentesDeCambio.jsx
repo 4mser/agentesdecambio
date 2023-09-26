@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -20,6 +20,49 @@ const AgentesDeCambio = () => {
       setMenuOpen(false);
     }
   };
+
+  const sensitivity =
+    window.innerWidth > 1000 ? { x: 10, y: 10 } : { x: 50, y: 50 };
+
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (event) => {
+    setPosition({
+      x: event.clientX,
+      y: event.clientY,
+    });
+  };
+
+  const handleOrientation = (event) => {
+    setPosition({
+      x: event.gamma * 50,
+      y: (event.beta - 20) * 50,
+    });
+  };
+
+  useEffect(() => {
+    if (window.innerWidth > 700) {
+      window.addEventListener("mousemove", handleMouseMove);
+      return () => {
+        window.removeEventListener("mousemove", handleMouseMove);
+      };
+    } else {
+      window.addEventListener("deviceorientation", handleOrientation);
+      return () => {
+        window.removeEventListener("deviceorientation", handleOrientation);
+      };
+    }
+  }, []);
+
+  let x = 0;
+  let y = 0;
+  let limitedX = 0;
+  let limitedY = 0;
+  x = (position.x - window.innerWidth / 2) / sensitivity.x;
+  y = (position.y - window.innerHeight / 2) / sensitivity.y;
+  limitedX = Math.min(Math.max(x, -25), 25);
+  limitedY = Math.min(Math.max(y, -25), 25);
+
   return (
     <Container>
       <Header>
@@ -40,6 +83,7 @@ const AgentesDeCambio = () => {
       <Swiper
         direction={"vertical"}
         mousewheel={true}
+        speed={700}
         pagination={{
           clickable: true,
         }}
@@ -47,8 +91,88 @@ const AgentesDeCambio = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <h2>AGENTES DE CAMBIO</h2>
-          <p>Hacia una Organización Sostenible</p>
+          <div>
+            <h2>AGENTES DE CAMBIO</h2>
+            <p>Hacia una Organización Sostenible</p>
+          </div>
+
+          <LandImages>
+            <img
+              style={
+                innerWidth > 1000
+                  ? {
+                      transform: `translate(${-limitedX}%, ${limitedY}%)`,
+                      transition: "transform .5s ease-out",
+                    }
+                  : {
+                      transform: `translate(${-limitedX}%, ${limitedY}%)`,
+                      transition: "transform .5s ease-out",
+                    }
+              }
+              src="https://appentropia.s3.amazonaws.com/agentesCambio/1.png"
+              alt=""
+            />
+            <img
+              style={
+                innerWidth > 1000
+                  ? {
+                      transform: `translate(${limitedX}%, ${-limitedY}%)`,
+                      transition: "transform .1s ease-out",
+                    }
+                  : {
+                      transform: `translate(${limitedX}%, ${-limitedY}%)`,
+                      transition: "transform .1s ease-out",
+                    }
+              }
+              src="https://appentropia.s3.amazonaws.com/agentesCambio/2.png"
+              alt=""
+            />
+            <img
+              style={
+                innerWidth > 1000
+                  ? {
+                      transform: `translate($-limitedX}%, ${limitedY}%)`,
+                      transition: "transform .5s ease-out",
+                    }
+                  : {
+                      transform: `translate(${limitedX}%, ${limitedY}%)`,
+                      transition: "transform .5s ease-out",
+                    }
+              }
+              src="https://appentropia.s3.amazonaws.com/agentesCambio/3.png"
+              alt=""
+            />
+            <img
+              style={
+                innerWidth > 1000
+                  ? {
+                      transform: `translate(${limitedX}%, ${limitedY}%)`,
+                      transition: "transform .1s ease-out",
+                    }
+                  : {
+                      transform: `translate(${limitedX}%, ${limitedY}%)`,
+                      transition: "transform .1s ease-out",
+                    }
+              }
+              src="https://appentropia.s3.amazonaws.com/agentesCambio/4.png"
+              alt=""
+            />
+            <img
+              style={
+                innerWidth > 1000
+                  ? {
+                      transform: `translate(${-limitedX}%, ${-limitedY}%)`,
+                      transition: "transform .1s ease-out",
+                    }
+                  : {
+                      transform: `translate(${-limitedX}%, ${-limitedY}%)`,
+                      transition: "transform .1s ease-out",
+                    }
+              }
+              src="https://appentropia.s3.amazonaws.com/agentesCambio/personas.png"
+              alt=""
+            />
+          </LandImages>
         </SwiperSlide>
         <SwiperSlide>
           <p>
@@ -89,10 +213,21 @@ export default AgentesDeCambio;
 const Container = styled.div`
   width: 100%;
   height: 100vh;
-  background: #ebf2ec;
+  background-image: radial-gradient(
+    circle at 85.36% -11.24%,
+    #f6fca9 0,
+    #e1f5a0 16.67%,
+    #c6e992 33.33%,
+    #a4d880 50%,
+    #80c770 66.67%,
+    #5ebb69 83.33%,
+    #3ab368 100%
+  );
   position: fixed;
   overflow: hidden;
   z-index: 9999;
+  top: 0;
+  left: 0;
 
   .mySwiper {
     width: 100%;
@@ -105,19 +240,25 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    color: #73a157;
+    color: white;
+  }
+
+  .swiper-pagination {
+    right: 1rem;
   }
 
   .swiper-pagination-bullet {
-    background: #73a157;
+    background: white;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    transition: 0.5s;
   }
 `;
 
 const Header = styled.div`
   width: 100%;
   height: 5rem;
-  background: #ebf2ec;
-  box-shadow: 0 1px 5px -4px black;
   display: flex;
   top: 0;
   left: 0;
@@ -163,7 +304,7 @@ const Header = styled.div`
   .botonNavegador .nav2 .btn1 {
     width: 50px;
     height: 3px;
-    background: #73a157;
+    background: white;
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
   }
@@ -171,7 +312,7 @@ const Header = styled.div`
   .botonNavegador .nav2 .btn2 {
     width: 50px;
     height: 3px;
-    background: #73a157;
+    background: white;
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
   }
@@ -184,5 +325,21 @@ const Header = styled.div`
 
   .nav2.open .btn2 {
     transform: rotate(-45deg) translate(6px, -7px);
+  }
+`;
+
+const LandImages = styled.div`
+  width: 70vw;
+  height: 70vw;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
   }
 `;
