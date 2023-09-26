@@ -240,7 +240,7 @@ Error generating stack: `+l.message+`
     `}
 `,e0=Ml`
 from {
-  transform: translateY(120px);
+  transform: translateY(200px);
 }
 to {
   transform:  translateY(0);
@@ -250,7 +250,7 @@ to {
       transform:  translateY(0);
     }
 to {
-  transform: translateY(120px);
+  transform: translateY(200px);
 }
 `,n0=pn.div`
   position: fixed;
@@ -259,7 +259,7 @@ to {
   align-items: center;
   flex-direction: row;
   width: 1rem;
-  height: 9rem;
+  height: 8.6rem;
   font-weight: 500;
   bottom: 0;
   right: 1rem;
