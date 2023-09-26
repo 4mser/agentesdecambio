@@ -177,7 +177,7 @@ const AgentesDeCambio = () => {
               <h2>AGENTES DE CAMBIO</h2>
               <p>Hacia una organización sostenible</p>
             </Titulo>
-            <Desliza>
+            <Desliza isFirstSlider={isFirstSlider}>
               DESLIZA
               <div className="desliza"></div>
             </Desliza>
@@ -388,6 +388,17 @@ const ImagesAnimation = keyframes`
   }
 `;
 
+const DeslizaAnimation = keyframes`
+  from {
+    transform: translateY(80px);
+    opacity: 0;
+  }
+  to {
+    transform:  translateY(0);
+    opacity: 1;
+  }
+`;
+
 // Estilos condicionales para LandImages y Titulo
 const LandImages = styled.div`
   height: 40vh;
@@ -443,7 +454,7 @@ const Desliza = styled.div`
   align-items: center;
   flex-direction: row;
   width: 1rem;
-  height: 4.7rem;
+  height: 7rem;
   font-weight: 500;
   bottom: 0;
   right: 1rem;
@@ -454,7 +465,13 @@ const Desliza = styled.div`
   .desliza {
     width: 1px;
     opacity: 0.5;
-    height: 2rem;
+    height: 4rem;
     background: var(--color2);
   }
+
+  ${(props) =>
+    props.isFirstSlider &&
+    css`
+      animation: ${DeslizaAnimation} 0.8s ease-in-out;
+    `}
 `;
