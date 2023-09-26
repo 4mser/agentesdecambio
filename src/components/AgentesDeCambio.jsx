@@ -64,6 +64,22 @@ const AgentesDeCambio = () => {
   limitedX = Math.min(Math.max(x, -25), 25);
   limitedY = Math.min(Math.max(y, -25), 25);
 
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <Container>
       <Header>
@@ -94,6 +110,11 @@ const AgentesDeCambio = () => {
           setIsFirstSlider(swiper.activeIndex === 0);
         }}
       >
+        <Desliza isFirstSlider={isFirstSlider}>
+          DESLIZA
+          <div className="desliza"></div>
+        </Desliza>
+
         <SwiperSlide>
           <LandPage>
             <LandImages isFirstSlider={isFirstSlider}>
@@ -177,10 +198,6 @@ const AgentesDeCambio = () => {
               <h2>AGENTES DE CAMBIO</h2>
               <p>Hacia una organización sostenible</p>
             </Titulo>
-            <Desliza isFirstSlider={isFirstSlider}>
-              DESLIZA
-              <div className="desliza"></div>
-            </Desliza>
           </LandPage>
         </SwiperSlide>
         <SwiperSlide>
@@ -388,17 +405,6 @@ const ImagesAnimation = keyframes`
   }
 `;
 
-const DeslizaAnimation = keyframes`
-  from {
-    transform: translateY(80px);
-    opacity: 0;
-  }
-  to {
-    transform:  translateY(0);
-    opacity: 1;
-  }
-`;
-
 // Estilos condicionales para LandImages y Titulo
 const LandImages = styled.div`
   height: 40vh;
@@ -447,6 +453,24 @@ const Titulo = styled.div`
     `}
 `;
 
+const DeslizaAnimationEnter = keyframes`
+from {
+  transform: translateY(200px);
+}
+to {
+  transform:  translateY(0);
+}
+`;
+
+const DeslizaAnimationExit = keyframes`
+    from {
+      transform:  translateY(0);
+    }
+to {
+  transform: translateY(200px);
+}
+`;
+
 const Desliza = styled.div`
   position: fixed;
   display: flex;
@@ -454,11 +478,12 @@ const Desliza = styled.div`
   align-items: center;
   flex-direction: row;
   width: 1rem;
-  height: 7rem;
+  height: 8.6rem;
   font-weight: 500;
   bottom: 0;
   right: 1rem;
   writing-mode: vertical-lr;
+  letter-spacing: 5px;
   font-size: 8px;
   color: var(--color2);
 
@@ -470,8 +495,11 @@ const Desliza = styled.div`
   }
 
   ${(props) =>
-    props.isFirstSlider &&
-    css`
-      animation: ${DeslizaAnimation} 0.8s ease-in-out;
-    `}
+    props.isFirstSlider
+      ? css`
+          animation: ${DeslizaAnimationEnter} 0.5s ease-in-out;
+        `
+      : css`
+          animation: ${DeslizaAnimationExit} 0.5s ease-in-out forwards;
+        `}
 `;
