@@ -184,18 +184,20 @@ Error generating stack: `+l.message+`
 `,Kv=Mf`
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateX(-40px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 `,qv=Mf`
   from {
-    transform: scale(1.1);
+    transform: translateX(40px);
+    opacity: 0;
   }
   to {
-    transform: scale(1);
+    transform:  translateX(0);
+    opacity: 1;
   }
 `,Zv=qn.div`
   height: 80vw;
@@ -212,7 +214,7 @@ Error generating stack: `+l.message+`
   }
 
   ${e=>e.isFirstSlider&&Ml`
-      animation: ${qv} 0.5s ease-out;
+      animation: ${qv} 0.7s ease-in-out;
     `}
 `,Jv=qn.div`
   width: 100%;
@@ -233,6 +235,6 @@ Error generating stack: `+l.message+`
   }
 
   ${e=>e.isFirstSlider&&Ml`
-      animation: ${Kv} 0.5s ease-out;
+      animation: ${Kv} 0.7s ease-in-out;
     `}
 `,e0=()=>R.jsx(R.Fragment,{children:R.jsx(bv,{})});ps.createRoot(document.getElementById("root")).render(R.jsx(X.StrictMode,{children:R.jsx(e0,{})}));
