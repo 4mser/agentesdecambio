@@ -148,17 +148,17 @@ Error generating stack: `+l.message+`
   }
 
   .botonNavegador .nav2 .btn1 {
-    width: 50px;
+    width: 40px;
     height: 3px;
-    background: #479547;
+    background: #fdfdfd;
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
   }
 
   .botonNavegador .nav2 .btn2 {
-    width: 50px;
+    width: 40px;
     height: 3px;
-    background: #479547;
+    background: #fdfdfd;
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
   }
@@ -175,7 +175,7 @@ Error generating stack: `+l.message+`
 `,Xv=qn.div`
   width: 100%;
   height: 80vh;
-  gap: 4rem;
+  gap: 1rem;
   top: 0;
   overflow: hidden;
   display: flex;
@@ -183,7 +183,7 @@ Error generating stack: `+l.message+`
   flex-direction: column;
   transform: translateY(-3rem);
 `,Qv=qn.div`
-  height: 60vw;
+  height: 80vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -203,12 +203,12 @@ Error generating stack: `+l.message+`
   padding: 2rem;
 
   h2 {
-    font-size: 10vw;
+    font-size: 12vw;
     margin: 0; /* Eliminamos el margen predeterminado del h2 */
   }
 
   p {
-    font-size: 4vw;
+    font-size: 5vw;
     opacity: 0.9;
     margin: 0; /* Eliminamos el margen predeterminado del p */
   }
