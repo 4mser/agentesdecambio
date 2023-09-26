@@ -201,34 +201,55 @@ const AgentesDeCambio = () => {
           </LandPage>
         </SwiperSlide>
         <SwiperSlide>
-          <p>
-            Es por todos conocido que estamos viviendo una etapa crítica en el
-            desarrollo de nuestro planeta, nos encontramos en una etapa de
-            Cambio Climático Innegable, con temperatura media de 1,1°C más
-          </p>
+          <Text>
+            <p>
+              Nos encontramos en un momento decisivo para afrontar con éxito el
+              mayor desafío de nuestro tiempo: el cambio climático. Cada día, en
+              diferentes puntos de la geografía mundial, el planeta nos manda
+              mensajes sobre las enormes transformaciones que está sufriendo:
+              desde cambiantes pautas meteorológicas que amenazan la producción
+              de alimentos; hasta el aumento del nivel del mar que incrementa el
+              riesgo de inundaciones catastróficas. Los efectos del cambio
+              climático nos afectan a todos. Si no se toman medidas drásticas
+              desde ya, será mucho más difícil y costoso adaptarse a sus efectos
+              en el futuro.
+            </p>
+          </Text>
         </SwiperSlide>
         <SwiperSlide>
-          <p>
-            Es por ello por lo que proponemos la creación de un programa de
-            Agentes de Cambio en el SENCE el cual permitirá no solo difundir
-            información sobre la importancia de cuidar los recursos naturales,
-          </p>
+          <Text>
+            <p>
+              A raíz de ello se crea un programa de Estado cuyo objetivo central
+              es generar una cultura ambiental que permita que las instituciones
+              públicas incorporen políticas, principios y prácticas amigables
+              con el medio ambiente, y la conservación de los recursos, tanto en
+              la administración de las dependencias físicas como en la gestión
+              de los procesos administrativos. <br /> Este programa se plantea
+              como un instrumento voluntario de gestión, que busca aportar al
+              cumplimiento a la Sustentabilidad en el Sector Público,
+              permitiendo, además, contribuir al cumplimiento de objetivos y
+              desafíos que tiene el país -nacionales e internacionales- en
+              materia de sustentabilidad, para desarrollar acciones que aporten,
+              particularmente, al cumplimiento de los Objetivos de Desarrollo
+              Sostenible de la Agenda 2030.
+            </p>
+          </Text>
         </SwiperSlide>
         <SwiperSlide>
-          <h2>Metodología del Programa</h2>
-          <ul>
-            <li>Capacitación</li>
-            <li>Red de Agentes de Cambio</li>
-            <li>Campañas de Concienciación</li>
-            <li>Proyectos de Impacto</li>
-            <li>Plataforma de Información</li>
-          </ul>
+          <Text>
+            <h3>Objetivos:</h3>
+            <p>
+              - Disminuir los impactos ambientales generados por los organismos
+              de la administración del Estado en su operación diaria,
+              centrándonos inicialmente en disminuir el consumo de:-Energía
+              Eléctrica -Hídrico -Papel
+            </p>
+            <p>
+              - Contribuir, progresivamente, a la gestión sustentable de los
+              organismos estatales. II-Levantamiento de información
+            </p>
+          </Text>
         </SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
       </Swiper>
     </Container>
   );
@@ -502,4 +523,10 @@ const Desliza = styled.div`
       : css`
           animation: ${DeslizaAnimationExit} 0.5s ease-in-out forwards;
         `}
+`;
+
+const Text = styled.div`
+  padding: 0 3rem 0 1rem;
+  color: var(--color2);
+  font-size: 13px;
 `;
