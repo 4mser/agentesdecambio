@@ -22,7 +22,7 @@ const AgentesDeCambio = () => {
   };
 
   const sensitivity =
-    window.innerWidth > 1000 ? { x: 10, y: 10 } : { x: 50, y: 50 };
+    window.innerWidth > 1000 ? { x: 10, y: 10 } : { x: 200, y: 200 };
 
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
@@ -35,7 +35,7 @@ const AgentesDeCambio = () => {
 
   const handleOrientation = (event) => {
     setPosition({
-      x: event.gamma * 50,
+      x: event.gamma * 5,
       y: (event.beta - 20) * 50,
     });
   };
