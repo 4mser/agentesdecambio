@@ -180,7 +180,6 @@ Error generating stack: `+l.message+`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  transform: translateY(-2rem);
 `,Kv=Mf`
   from {
     opacity: 0;
@@ -200,7 +199,7 @@ Error generating stack: `+l.message+`
     opacity: 1;
   }
 `,Zv=qn.div`
-  height: 80vw;
+  height: 40vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -214,7 +213,7 @@ Error generating stack: `+l.message+`
   }
 
   ${e=>e.isFirstSlider&&Ml`
-      animation: ${qv} 0.7s ease-in-out;
+      animation: ${qv} 0.8s ease-in-out;
     `}
 `,Jv=qn.div`
   width: 100%;
@@ -235,6 +234,6 @@ Error generating stack: `+l.message+`
   }
 
   ${e=>e.isFirstSlider&&Ml`
-      animation: ${Kv} 0.7s ease-in-out;
+      animation: ${Kv} 0.8s ease-in-out;
     `}
 `,e0=()=>R.jsx(R.Fragment,{children:R.jsx(bv,{})});ps.createRoot(document.getElementById("root")).render(R.jsx(X.StrictMode,{children:R.jsx(e0,{})}));
