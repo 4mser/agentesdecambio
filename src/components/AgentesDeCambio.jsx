@@ -22,7 +22,7 @@ const AgentesDeCambio = () => {
   };
 
   const sensitivity =
-    window.innerWidth > 1000 ? { x: 10, y: 10 } : { x: 200, y: 200 };
+    window.innerWidth > 1000 ? { x: 10, y: 10 } : { x: 150, y: 300 };
 
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
@@ -91,11 +91,6 @@ const AgentesDeCambio = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <div>
-            <h2>AGENTES DE CAMBIO</h2>
-            <p>Hacia una Organización Sostenible</p>
-          </div>
-
           <LandImages>
             <img
               style={
@@ -173,6 +168,10 @@ const AgentesDeCambio = () => {
               alt=""
             />
           </LandImages>
+          <Titulo>
+            <h2>AGENTES DE CAMBIO</h2>
+            <p>Hacia una Organización Sostenible</p>
+          </Titulo>
         </SwiperSlide>
         <SwiperSlide>
           <p>
@@ -236,8 +235,10 @@ const Container = styled.div`
   }
 
   .swiper-slide {
+    width: 100%;
+    height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-direction: column;
     color: white;
@@ -331,15 +332,32 @@ const Header = styled.div`
 const LandImages = styled.div`
   width: 70vw;
   height: 70vw;
-  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 
   img {
     width: 100%;
     height: 100%;
     object-fit: contain;
     position: absolute;
+  }
+`;
+
+const Titulo = styled.div`
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 12px;
+    opacity: 0.9;
   }
 `;
