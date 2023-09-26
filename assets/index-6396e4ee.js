@@ -259,11 +259,12 @@ to {
   align-items: center;
   flex-direction: row;
   width: 1rem;
-  height: 7rem;
+  height: 9rem;
   font-weight: 500;
   bottom: 0;
   right: 1rem;
   writing-mode: vertical-lr;
+  letter-spacing: 5px;
   font-size: 8px;
   color: var(--color2);
 
