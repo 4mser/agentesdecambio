@@ -1,0 +1,7 @@
+* {
+  border: none;
+  padding: none;
+  box-sizing: border-box;
+
+  user-select: none;
+}
